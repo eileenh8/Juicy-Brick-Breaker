@@ -7,7 +7,6 @@ var width_default = 0
 var decay = 0.02
 
 func _ready():
-	width = $CollisionShape2D.get_shape().size.x
 	width_default = width
 	target = Vector2(Global.VP.x / 2, Global.VP.y - 80)
 
