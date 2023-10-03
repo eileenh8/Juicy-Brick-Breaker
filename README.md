@@ -15,6 +15,8 @@ Which features you included
 
 https://marqueeplier.itch.io/breakoutpong-asset-pack
 
+https://opengameart.org/content/alot-of-particles-flashburst-special-effect-alotofparticles15
+
 
 ## Future Development
 
