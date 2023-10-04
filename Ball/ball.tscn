@@ -22,7 +22,6 @@ shape = SubResource("1")
 
 [node name="Images" type="Node2D" parent="."]
 position = Vector2(1.77636e-15, 0)
-scale = Vector2(1, 1)
 
 [node name="Ball" type="Sprite2D" parent="Images"]
 position = Vector2(1.49012e-08, 0)

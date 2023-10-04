@@ -37,7 +37,7 @@ func _on_Ball_body_entered(body):
 	if body.has_method("hit"):
 		body.hit(self)
 		accelerate = true	
-		$Highlight.modulate.a = 1.0
+		$Images/Highlight.modulate.a = 1.0
 	if tween:
 		tween.kill()
 	tween = create_tween().set_parallel(true)
@@ -70,8 +70,8 @@ func _integrate_forces(state):
 		state.linear_velocity.y = sign(state.linear_velocity.y) * min_speed * speed_multiplier
 	if state.linear_velocity.length() > max_speed * speed_multiplier:
 		state.linear_velocity = state.linear_velocity.normalized() * max_speed * speed_multiplier
-	if $Highlight.modulate.a > 0:
-		$Highlight.modulate.a -= decay
+	if $Images/Highlight.modulate.a > 0:
+		$Images/Highlight.modulate.a -= decay
 
 func change_size(s):
 	$CollisionShape2D.scale = s
