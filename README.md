@@ -1,9 +1,10 @@
 # Project Name
-Juicy Brick Breaker
+Juicy Brick Breako
 
-Context and date
+October 11, 2023
 
 Description
+Juicy Brick-Breaker game with juicy elements such as:
 
 
 ## Implementation
@@ -15,7 +16,7 @@ Which features you included
 
 https://marqueeplier.itch.io/breakoutpong-asset-pack
 
-
+https://kenney.nl/assets/puzzle-pack
 
 ## Future Development
 
