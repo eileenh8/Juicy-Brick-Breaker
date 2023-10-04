@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://ei3ny6s8bla5"]
+[gd_scene load_steps=5 format=3 uid="uid://ei3ny6s8bla5"]
 
 [ext_resource type="Script" path="res://UI/Main_Menu.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://h0wvoxc4guau" path="res://Assets/assets/menu/start.png" id="2_gmcpo"]
+[ext_resource type="Texture2D" uid="uid://b4wcagqhfcben" path="res://Assets/assets/menu/quit.png" id="3_xakfm"]
+[ext_resource type="Texture2D" uid="uid://6c7tounb24yn" path="res://Assets/assets/menu/logo.png" id="4_jili5"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -39,7 +42,7 @@ offset_right = 100.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Play"
+icon = ExtResource("2_gmcpo")
 
 [node name="Quit" type="Button" parent="."]
 layout_mode = 1
@@ -54,7 +57,11 @@ offset_right = 100.0
 offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Quit"
+icon = ExtResource("3_xakfm")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(575, 235)
+texture = ExtResource("4_jili5")
 
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]

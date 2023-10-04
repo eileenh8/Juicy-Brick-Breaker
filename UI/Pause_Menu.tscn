@@ -1,12 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://ci5q3vmuimsfr"]
+[gd_scene load_steps=7 format=3 uid="uid://ci5q3vmuimsfr"]
 
 [ext_resource type="Script" path="res://UI/Pause_Menu.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://bol67htdrgp5y" path="res://Assets/Orbitron Black copy.otf" id="2_uu2rm"]
+[ext_resource type="FontFile" uid="uid://bt2jvmix6ts4l" path="res://Assets/Orbitron Medium copy.otf" id="3_qqwed"]
+
+[sub_resource type="Theme" id="Theme_io5i5"]
+default_font = ExtResource("2_uu2rm")
+default_font_size = 25
+
+[sub_resource type="Theme" id="Theme_jyd0m"]
+default_font = ExtResource("3_qqwed")
+
+[sub_resource type="Theme" id="Theme_qxfud"]
+default_font = ExtResource("3_qqwed")
 
 [node name="Pause_Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -23,6 +37,7 @@ anchor_bottom = 1.0
 offset_bottom = -200.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_io5i5")
 text = "Paused"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -40,6 +55,7 @@ offset_right = 100.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_jyd0m")
 text = "Restart Game"
 
 [node name="Quit" type="Button" parent="."]
@@ -55,6 +71,7 @@ offset_right = 100.0
 offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_qxfud")
 text = "Quit"
 
 [connection signal="pressed" from="Restart" to="." method="_on_Restart_pressed"]

@@ -11,7 +11,7 @@ func _ready():
 	position = new_position
 
 func _physics_process(_delta):
-	if dying:
+	if dying and not $Confetti.emitting:
 		queue_free()
 
 func hit(_ball):
@@ -20,7 +20,7 @@ func hit(_ball):
 func die():
 	dying = true
 	collision_layer = 0
-	$ColorRect.hide()
+	$Confetti.emitting = true
 	Global.update_score(score)
 	if not Global.feverish:
 		Global.update_fever(score)

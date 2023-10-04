@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://r1nm10jeqyta"]
+[gd_scene load_steps=7 format=3 uid="uid://r1nm10jeqyta"]
 
 [ext_resource type="Script" path="res://UI/Instructions.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://bol67htdrgp5y" path="res://Assets/Orbitron Black copy.otf" id="2_togsx"]
+[ext_resource type="FontFile" uid="uid://bt2jvmix6ts4l" path="res://Assets/Orbitron Medium copy.otf" id="3_wqgqk"]
+
+[sub_resource type="Theme" id="Theme_010au"]
+default_font = ExtResource("2_togsx")
+
+[sub_resource type="Theme" id="Theme_68n7r"]
+default_font = ExtResource("3_wqgqk")
+
+[sub_resource type="Theme" id="Theme_r53uu"]
+default_font = ExtResource("3_wqgqk")
 
 [node name="Instructions" type="Control"]
 process_mode = 3
@@ -26,6 +37,7 @@ anchor_bottom = 1.0
 offset_bottom = -248.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_010au")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -33,6 +45,7 @@ vertical_alignment = 1
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = SubResource("Theme_68n7r")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -43,6 +56,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -200.0
 offset_bottom = -160.0
+theme = SubResource("Theme_r53uu")
 horizontal_alignment = 1
 vertical_alignment = 1
 
