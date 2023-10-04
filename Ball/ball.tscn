@@ -20,12 +20,16 @@ script = ExtResource("1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("1")
 
-[node name="Ball" type="Sprite2D" parent="."]
+[node name="Images" type="Node2D" parent="."]
+position = Vector2(1.77636e-15, 0)
+scale = Vector2(1, 1)
+
+[node name="Ball" type="Sprite2D" parent="Images"]
 position = Vector2(1.49012e-08, 0)
 scale = Vector2(1.06818, 1.06818)
 texture = ExtResource("2_1b2tv")
 
-[node name="Highlight" type="Sprite2D" parent="."]
+[node name="Highlight" type="Sprite2D" parent="Images"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-0.11775, -0.11775)
 scale = Vector2(0.766597, 0.766597)
