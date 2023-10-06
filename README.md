@@ -1,5 +1,4 @@
-# Project Name
-Juicy Brick Breako
+# Juicy Brick Breako
 
 October 11, 2023
 
