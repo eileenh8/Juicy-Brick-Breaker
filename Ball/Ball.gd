@@ -14,6 +14,8 @@ var wobble_max = 5
 var wobble_direction = Vector2.ZERO
 var decay_wobble = 0.15
 
+var h_rotate = 0.0
+
 var tween
 
 var distort_effect = 0.0002
@@ -80,6 +82,8 @@ func change_speed(s):
 	speed_multiplier = s
 
 func die():
+	var die_sound = get_node("/root/Game/Die_Sound")
+	die_sound.play()
 	queue_free()
 
 func wobble():
@@ -88,6 +92,16 @@ func wobble():
 		var pos = wobble_direction * wobble_amplitude * sin(wobble_period)
 		$Images.position = pos
 		wobble_amplitude -= decay_wobble
+		
+func comet():
+	h_rotate = wrapf(h_rotate+0.01, 0, 1)
+	var comet_container = get_node_or_null("/root/Game/Comet_Container")
+	if comet_container != null:
+		var sprite = $Images/Sprite.duplicate()
+		sprite.global_position = global_position
+		sprite.modulate.s = 0.6
+		sprite.modulate.h = h_rotate
+		comet_container.add_child(sprite)
 
 func distort():
 	var direction = Vector2(1 + linear_velocity.length() * distort_effect, 1 - linear_velocity.length() * distort_effect)

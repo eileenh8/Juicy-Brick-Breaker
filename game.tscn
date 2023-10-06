@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bd5m3yq1k5fx8"]
+[gd_scene load_steps=19 format=3 uid="uid://bd5m3yq1k5fx8"]
 
 [ext_resource type="Script" path="res://Brick/Brick_Container.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://dmwf8wjdir6y5" path="res://Paddle/Paddle.tscn" id="2"]
+[ext_resource type="Script" path="res://Ball/Comet_Container.gd" id="2_x1jt3"]
 [ext_resource type="Script" path="res://Ball/Ball_Container.gd" id="3"]
 [ext_resource type="Script" path="res://Game.gd" id="4"]
 [ext_resource type="PackedScene" uid="uid://ci5q3vmuimsfr" path="res://UI/Pause_Menu.tscn" id="5"]
@@ -10,6 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://r1nm10jeqyta" path="res://UI/Instructions.tscn" id="8"]
 [ext_resource type="Script" path="res://Effects/Fever.gd" id="9"]
 [ext_resource type="Script" path="res://UI/Camera.gd" id="10_pbg2k"]
+[ext_resource type="AudioStream" uid="uid://dtlfxexfvysv8" path="res://Assets/assets/sounds/music.wav" id="11_3cjer"]
+[ext_resource type="AudioStream" uid="uid://brubt3wr84pu0" path="res://Assets/assets/sounds/wall.wav" id="12_1w5xj"]
+[ext_resource type="AudioStream" uid="uid://p6n2pv6oao1h" path="res://Assets/assets/sounds/hit.wav" id="12_xssli"]
+[ext_resource type="AudioStream" uid="uid://e6plpah5610j" path="res://Assets/assets/sounds/bullet.wav" id="13_m8hb1"]
+[ext_resource type="AudioStream" uid="uid://22jd4oi80sjp" path="res://Assets/assets/sounds/die.wav" id="14_54rwx"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(200, 1000)
@@ -19,6 +25,9 @@ size = Vector2(1396, 200)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("4")
+
+[node name="Comet_Container" type="Node2D" parent="."]
+script = ExtResource("2_x1jt3")
 
 [node name="Wall_Container" type="Node2D" parent="."]
 
@@ -98,5 +107,21 @@ visible = false
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
 script = ExtResource("10_pbg2k")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_3cjer")
+autoplay = true
+
+[node name="Wall_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_1w5xj")
+
+[node name="Paddle_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_m8hb1")
+
+[node name="Brick_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_xssli")
+
+[node name="Die_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_54rwx")
 
 [connection signal="timeout" from="Fever/Timer" to="Fever" method="_on_Timer_timeout"]
