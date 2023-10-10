@@ -60,7 +60,9 @@ func _integrate_forces(state):
 		var paddle = get_node_or_null("/root/Game/Paddle_Container/Paddle")
 		if paddle != null:
 			state.transform.origin = Vector2(paddle.position.x, paddle.position.y - 30)	
-
+	else:
+		comet()
+		
 	if position.y > Global.VP.y + 100:
 		die()
 	if accelerate:
@@ -97,7 +99,7 @@ func comet():
 	h_rotate = wrapf(h_rotate+0.01, 0, 1)
 	var comet_container = get_node_or_null("/root/Game/Comet_Container")
 	if comet_container != null:
-		var sprite = $Images/Sprite.duplicate()
+		var sprite = $Images/Ball.duplicate()
 		sprite.global_position = global_position
 		sprite.modulate.s = 0.6
 		sprite.modulate.h = h_rotate
