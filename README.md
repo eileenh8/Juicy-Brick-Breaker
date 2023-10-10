@@ -1,5 +1,4 @@
-# Project Name
-Juicy Brick Breako
+# Juicy Brick Breako
 
 October 11, 2023
 
@@ -10,6 +9,21 @@ Juicy Brick-Breaker game with juicy elements such as:
 ## Implementation
 
 Which features you included
+
+A theme 
+
+Red squares to indicate the number of lives. 
+
+The wall changes color every time the ball hits it.
+
+Confetti particles every time the ball hits the paddle.
+
+Bricks falling in place before the game.
+
+Music and sounds.
+
+I created the Wall and Die sounds. 
+
 
 
 ## References
