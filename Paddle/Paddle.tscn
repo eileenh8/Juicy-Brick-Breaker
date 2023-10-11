@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmwf8wjdir6y5"]
+[gd_scene load_steps=10 format=3 uid="uid://dmwf8wjdir6y5"]
 
 [ext_resource type="Script" path="res://Paddle/Paddle.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://cj0d68mm6d4s7" path="res://Assets/assets/paddle/paddle.png" id="2_p6n72"]
 [ext_resource type="Texture2D" uid="uid://baoo0ud0wvgoq" path="res://Assets/assets/paddle/paddle_old.png" id="2_trrlk"]
 [ext_resource type="Texture2D" uid="uid://cn0bj46qamkin" path="res://Assets/confetti.png" id="4_bpmmf"]
+[ext_resource type="Texture2D" uid="uid://byuyr2is3us41" path="res://Assets/Eye copy.png.png" id="5_733gf"]
+[ext_resource type="Texture2D" uid="uid://drf2hvqc7yaqn" path="res://Assets/Pupil copy.png" id="6_c032m"]
+[ext_resource type="Texture2D" uid="uid://bqx2igwi5tfy8" path="res://Assets/Mouth copy.png" id="7_w3iph"]
 
 [sub_resource type="Curve" id="Curve_faq4r"]
 max_value = 255.0
@@ -21,18 +24,27 @@ script = ExtResource("1")
 [node name="Powerups" type="Node2D" parent="."]
 
 [node name="Paddle" type="Sprite2D" parent="."]
+position = Vector2(1.1, -0.5)
+scale = Vector2(1.28438, 1.6875)
 texture = ExtResource("2_trrlk")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-0.399994, -1.6)
+scale = Vector2(1.24219, 1.51562)
 polygon = PackedVector2Array(32, -5.8, 32, 4.2, 29.4, 8, -29, 8, -32, 4.8, -32, -5.8, -30, -7.8, 30, -8)
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-1.8, 5)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(1.89999, -5.8)
+scale = Vector2(1.21402, 1.40278)
 polygon = PackedVector2Array(30, -9, 33, -6, 33, 5, 30, 9, -30, 9, -33, 5, -33, -7, -30, -9)
 
 [node name="Highlight" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
+position = Vector2(0.0999985, -0.999996)
+scale = Vector2(1.28438, 1.75)
 texture = ExtResource("2_p6n72")
 
 [node name="Confetti" type="CPUParticles2D" parent="."]
@@ -51,3 +63,25 @@ angular_velocity_max = 800.0
 scale_amount_curve = SubResource("Curve_faq4r")
 hue_variation_max = 1.0
 hue_variation_curve = SubResource("Curve_ob38r")
+
+[node name="Eye1" type="Sprite2D" parent="."]
+position = Vector2(-23, -18)
+texture = ExtResource("5_733gf")
+
+[node name="Pupil" type="Node2D" parent="Eye1"]
+
+[node name="Sprite" type="Sprite2D" parent="Eye1/Pupil"]
+texture = ExtResource("6_c032m")
+
+[node name="Eye2" type="Sprite2D" parent="."]
+position = Vector2(23, -18)
+texture = ExtResource("5_733gf")
+
+[node name="Pupil" type="Node2D" parent="Eye2"]
+
+[node name="Sprite" type="Sprite2D" parent="Eye2/Pupil"]
+texture = ExtResource("6_c032m")
+
+[node name="Mouth" type="Sprite2D" parent="."]
+position = Vector2(0, 16)
+texture = ExtResource("7_w3iph")

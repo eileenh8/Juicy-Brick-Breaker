@@ -6,9 +6,11 @@
 
 [sub_resource type="Theme" id="Theme_010au"]
 default_font = ExtResource("2_togsx")
+default_font_size = 22
 
 [sub_resource type="Theme" id="Theme_68n7r"]
 default_font = ExtResource("3_wqgqk")
+default_font_size = 20
 
 [sub_resource type="Theme" id="Theme_r53uu"]
 default_font = ExtResource("3_wqgqk")

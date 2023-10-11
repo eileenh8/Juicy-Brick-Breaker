@@ -5,7 +5,7 @@
 
 [sub_resource type="Theme" id="Theme_lbowt"]
 default_font = ExtResource("2_oe2od")
-default_font_size = 22
+default_font_size = 28
 
 [node name="End_Game" type="Control"]
 layout_mode = 3

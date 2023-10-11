@@ -1,13 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://do7pdpjxteg8e"]
+[gd_scene load_steps=7 format=3 uid="uid://do7pdpjxteg8e"]
 
 [ext_resource type="Script" path="res://UI/HUD.gd" id="1"]
 [ext_resource type="FontFile" uid="uid://bt2jvmix6ts4l" path="res://Assets/Orbitron Medium copy.otf" id="2_cm47h"]
+[ext_resource type="Shader" path="res://Effects/HUD.gdshader" id="3_a88d7"]
 
 [sub_resource type="Theme" id="Theme_irp25"]
 default_font = ExtResource("2_cm47h")
 
 [sub_resource type="Theme" id="Theme_dilo6"]
 default_font = ExtResource("2_cm47h")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u7s43"]
+shader = ExtResource("3_a88d7")
+shader_parameter/fireMovement = Vector2(-0.01, -0.5)
+shader_parameter/distortionMovement = Vector2(-0.01, -0.3)
+shader_parameter/normalStrength = 40.0
+shader_parameter/distortionStrength = 0.1
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -32,38 +40,45 @@ color = Color(0, 0, 0, 0.25098)
 
 [node name="Score" type="Label" parent="."]
 layout_mode = 0
-offset_left = 15.0
-offset_right = 215.0
-offset_bottom = 40.0
+offset_left = 32.0
+offset_top = 18.0
+offset_right = 232.0
+offset_bottom = 58.0
 theme = SubResource("Theme_irp25")
 text = "Score: "
 vertical_alignment = 1
 
 [node name="Time" type="Label" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -214.0
-offset_right = -14.0
-offset_bottom = 40.0
+offset_left = -231.0
+offset_top = 18.0
+offset_right = -31.0
+offset_bottom = 58.0
+grow_horizontal = 0
 theme = SubResource("Theme_dilo6")
 text = "Time: "
 horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Fever" type="ProgressBar" parent="."]
+material = SubResource("ShaderMaterial_u7s43")
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -150.0
-offset_top = 10.0
+offset_top = 27.0
 offset_right = 150.0
-offset_bottom = 37.0
+offset_bottom = 54.0
 grow_horizontal = 2
 show_percentage = false
 
 [node name="Indicator_Container" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
