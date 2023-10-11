@@ -40,6 +40,8 @@ The screen shakes when you die.
 
 Comet trail on the ball.
 
+Rotating background colors.
+
 Fire shader added in the fever bar.
 
 Music and sound effects.
