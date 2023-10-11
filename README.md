@@ -3,7 +3,7 @@
 October 11, 2023
 
 Description
-Juicy Brick-Breaker game with juicy elements such as:
+Juicy Brick-Breaker game with juicy elements
 
 
 ## Implementation
@@ -31,6 +31,8 @@ Bricks falling in place before the game.
 Bricks fade and rotate when hit.
 
 The screen shakes when you die.
+
+Comet trail on the ball.
 
 Music and sound effects.
 
