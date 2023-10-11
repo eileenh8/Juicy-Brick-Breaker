@@ -3,10 +3,16 @@
 October 11, 2023
 
 Description
-Juicy Brick-Breaker game with juicy elements
 
+Adding "juicy" elements to a simple brick-breaker game.
+
+## To play
+
+Move the paddle using the mouse. Release the ball (and trigger fever mode) using the left mouse button. Assist the ball in breaking all the bricks before you run out of time.
 
 ## Implementation
+
+Created using [Godot 4.1.1](https://godotengine.org/download)
 
 Which features you included:
 
@@ -47,6 +53,8 @@ I created the Wall and Die sounds.
 https://marqueeplier.itch.io/breakoutpong-asset-pack
 
 https://kenney.nl/assets/puzzle-pack
+
+Shader: [Fire Effect by Tsar333](https://godotshaders.com/shader/fire-effect/)
 
 ## Future Development
 None
