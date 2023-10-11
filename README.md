@@ -34,6 +34,8 @@ The screen shakes when you die.
 
 Comet trail on the ball.
 
+Fire shader added in the fever bar.
+
 Music and sound effects.
 
 I created the Wall and Die sounds. 
