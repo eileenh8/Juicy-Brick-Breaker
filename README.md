@@ -41,6 +41,8 @@ Bricks falling in place before the game.
 
 Bricks fade and rotate when hit.
 
+Bricks sway. 
+
 The screen shakes when you die.
 
 Comet trail on the ball.
