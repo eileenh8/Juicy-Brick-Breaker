@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ei3ny6s8bla5"]
+[gd_scene load_steps=6 format=3 uid="uid://ei3ny6s8bla5"]
 
 [ext_resource type="Script" path="res://UI/Main_Menu.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://h0wvoxc4guau" path="res://Assets/assets/menu/start.png" id="2_gmcpo"]
+[ext_resource type="Texture2D" uid="uid://c1vu7pay1akq1" path="res://Assets/assets/levels/bg1.png" id="2_yovxl"]
 [ext_resource type="Texture2D" uid="uid://b4wcagqhfcben" path="res://Assets/assets/menu/quit.png" id="3_xakfm"]
 [ext_resource type="Texture2D" uid="uid://6c7tounb24yn" path="res://Assets/assets/menu/logo.png" id="4_jili5"]
 
@@ -19,6 +20,11 @@ layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0, 0, 0, 0.501961)
+
+[node name="Background Image" type="Sprite2D" parent="."]
+position = Vector2(577, 419)
+scale = Vector2(1.45812, 1.46125)
+texture = ExtResource("2_yovxl")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0

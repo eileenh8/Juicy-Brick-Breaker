@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://bd5m3yq1k5fx8"]
+[gd_scene load_steps=21 format=3 uid="uid://bd5m3yq1k5fx8"]
 
 [ext_resource type="Script" path="res://Brick/Brick_Container.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://dmwf8wjdir6y5" path="res://Paddle/Paddle.tscn" id="2"]
 [ext_resource type="Script" path="res://Effects/Background.gd" id="2_phplf"]
 [ext_resource type="Script" path="res://Ball/Comet_Container.gd" id="2_x1jt3"]
 [ext_resource type="Script" path="res://Ball/Ball_Container.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://gmmwae86u34w" path="res://Assets/assets/levels/bg3.png" id="3_ac57c"]
 [ext_resource type="Script" path="res://Game.gd" id="4"]
 [ext_resource type="PackedScene" uid="uid://ci5q3vmuimsfr" path="res://UI/Pause_Menu.tscn" id="5"]
 [ext_resource type="Script" path="res://Wall/Wall.gd" id="6"]
@@ -31,6 +32,11 @@ script = ExtResource("4")
 offset_right = 1154.0
 offset_bottom = 801.0
 script = ExtResource("2_phplf")
+
+[node name="Background Image" type="Sprite2D" parent="."]
+position = Vector2(574, 390)
+scale = Vector2(1.47064, 1.43299)
+texture = ExtResource("3_ac57c")
 
 [node name="Comet_Container" type="Node2D" parent="."]
 script = ExtResource("2_x1jt3")

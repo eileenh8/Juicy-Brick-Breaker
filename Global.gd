@@ -1,5 +1,10 @@
 extends Node
 
+const SCORES = "user://scores.sav"
+const SECRET = "I LOVE PROJECT 02"
+
+var scores = []
+
 var VP = Vector2.ZERO
 var level = 0
 var score = 0
@@ -8,6 +13,10 @@ var time = 0
 var fever = 0
 var fever_multiplier = 0.15
 var starting_in = 0
+
+var sway_index = 0
+var sway_period = 0.1
+
 
 var fever_decay = 0.1
 var feverish = false
@@ -30,7 +39,7 @@ func _physics_process(_delta):
 		update_fever(-fever_decay)
 	else:
 		feverish = false
-		
+	sway_index += sway_period
 
 func _input(event):
 	if event.is_action_pressed("menu"):
@@ -58,6 +67,7 @@ func _resize():
 func reset():
 	level = 0
 	score = 0
+	#load_scores()
 	lives = default_lives
 	starting_in = default_starting_in
 
@@ -74,6 +84,42 @@ func update_lives(l):
 		HUD.update_lives()
 	if lives <= 0:
 		end_game(false)
+		
+#func add_score():
+	#var temp = []
+	#var trailer = 10000000
+	#var added = false
+	#for s in scores:
+		#if score < trailer and score > s["score"]:
+			#temp.append({"score":score})
+			#added = true
+		#temp.append(s)
+		#trailer = s["score"]
+	#if not added:
+		#temp.append({"score":score})
+	#scores = temp
+	#save_scores()
+	
+#func load_scores():
+	#if not FileAccess.file_exists(SCORES):
+	#	return
+	#var save_scores = FileAccess.open(SCORES,FileAccess.READ)
+	#save_scores.open_encrypted_with_pass(SCORES, FileAccess.READ, SECRET)
+	#var contents = save_scores.get_as_text()
+	#var json_object = JSON.new()
+	#var json_contents = json_object.parse(contents)
+	#if json_contents.error == OK:
+	#	scores = json_contents
+	#save_scores.close()
+	
+
+#func save_scores():
+	#var save_scores = FileAccess.open(SCORES,FileAccess.WRITE)
+	#save_scores.open_encrypted_with_pass(SCORES, FileAccess.WRITE, SECRET)
+	#var json = JSON.new()
+	#var json_string = json.stringify(scores)
+	#save_scores.store_string(json_string)
+	#save_scores.close()
 
 func update_fever(f):
 	fever += f * fever_multiplier

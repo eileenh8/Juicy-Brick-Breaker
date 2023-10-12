@@ -11,6 +11,10 @@ var time_s = 1.2
 var time_v = 1.5
 var tween
 
+var sway_amplitude = 3.0
+var sway_initial_position = Vector2.ZERO
+var sway_randomizer = Vector2.ZERO
+
 var powerup_prob = 0.1
 
 func _ready():
@@ -19,10 +23,16 @@ func _ready():
 	position.y = -100
 	tween = create_tween()
 	tween.tween_property(self, "position", new_position, 0.5 + randf()*2).set_trans(Tween.TRANS_BOUNCE)
-
+	sway_initial_position = $Sprite2D.position
+	sway_randomizer = Vector2(randf()*6-3.0, randf()*6-3.0)
+	
+	
 func _physics_process(_delta):
 	if dying and not $Confetti.emitting and not tween:
 		queue_free()
+	var pos_x = (sin(Global.sway_index)*(sway_amplitude + sway_randomizer.x))
+	var pos_y = (cos(Global.sway_index)*(sway_amplitude + sway_randomizer.y))
+	$Sprite2D.position = Vector2(sway_initial_position.x + pos_x, sway_initial_position.y + pos_y)
 
 func hit(_ball):
 	die()
