@@ -45,9 +45,11 @@ Bricks sway.
 
 The screen shakes when you die.
 
-Comet trail on the ball.
+Different backgrounds for Menu, Game, and End screen.
 
-Rotating background colors.
+End game screen with added buttons to play again or quit.
+
+Comet trail on the ball.
 
 Fire shader added in the fever bar.
 
@@ -57,6 +59,7 @@ Music and sound effects.
 
 I created the Wall and Die sounds. 
 
+I created the face sprites. 
 
 
 ## References
